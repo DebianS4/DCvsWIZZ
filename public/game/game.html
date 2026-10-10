@@ -678,7 +678,7 @@ const Stage = (() => {
       ctx.fillRect(0, 0, W, H);
     }
   }
-  return { draw };
+  return { draw, weroIntro, yiyoIntro };
 })();
 
 // === SPRITE MANAGER ===
@@ -1377,10 +1377,10 @@ function drawMiguelIntro(elapsed){
   // Placeholder visual temporal: estos elementos serán sustituidos por los sprites de Yiyo y Wero.
   if(phase===0){
     const bob=Math.sin(elapsed*8)*3, x=W/2;
-    if(weroIntro.complete && weroIntro.naturalWidth){
-      const h=350, w=h*weroIntro.naturalWidth/weroIntro.naturalHeight;
+    if(Stage.weroIntro.complete && Stage.weroIntro.naturalWidth){
+      const h=350, w=h*Stage.weroIntro.naturalWidth/Stage.weroIntro.naturalHeight;
       ctx.shadowColor='#ef3dff';ctx.shadowBlur=24;
-      ctx.drawImage(weroIntro,x-w/2,GROUND_Y-h-12+bob,w,h);
+      ctx.drawImage(Stage.weroIntro,x-w/2,GROUND_Y-h-12+bob,w,h);
       ctx.shadowBlur=0;
     } else {
       ctx.fillStyle='#ef3dff';ctx.shadowColor='#ef3dff';ctx.shadowBlur=28;ctx.beginPath();ctx.arc(x,GROUND_Y-120+bob,62,0,Math.PI*2);ctx.fill();
@@ -1391,10 +1391,10 @@ function drawMiguelIntro(elapsed){
     ctx.font='900 12px Arial';ctx.fillStyle='#ffe900';ctx.fillText('CON SU LECHE',x,GROUND_Y-212);
   } else {
     const bikeX=-180+(W+360)*progress, bikeY=GROUND_Y-30;
-    if(yiyoIntro.complete && yiyoIntro.naturalWidth){
-      const h=250, w=h*yiyoIntro.naturalWidth/yiyoIntro.naturalHeight;
+    if(Stage.yiyoIntro.complete && Stage.yiyoIntro.naturalWidth){
+      const h=250, w=h*Stage.yiyoIntro.naturalWidth/Stage.yiyoIntro.naturalHeight;
       ctx.globalAlpha=1-progress*.6;ctx.shadowColor='#13a7ff';ctx.shadowBlur=22;
-      ctx.drawImage(yiyoIntro,bikeX-w/2,GROUND_Y-h+8,w,h);ctx.shadowBlur=0;ctx.globalAlpha=1;
+      ctx.drawImage(Stage.yiyoIntro,bikeX-w/2,GROUND_Y-h+8,w,h);ctx.shadowBlur=0;ctx.globalAlpha=1;
     } else {
       // Fallback visual mientras el sprite de Drive termina de cargar.
       ctx.strokeStyle='#13a7ff';ctx.shadowColor='#13a7ff';ctx.shadowBlur=18;ctx.lineWidth=7;
