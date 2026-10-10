@@ -145,6 +145,13 @@
     letter-spacing:.15em;opacity:0;
   }
   .round-banner.show{animation:bannerShow 1.6s ease-out forwards;}
+  .round-art{position:absolute;z-index:4;top:34%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;gap:clamp(12px,4vw,54px);width:min(96%,760px);opacity:0;pointer-events:none;}
+  .round-art.show{animation:roundArtShow 2.2s ease-out forwards;}
+  .round-art img{width:clamp(105px,16vw,190px);height:clamp(84px,18vh,150px);object-fit:contain;filter:drop-shadow(0 8px 8px rgba(0,0,0,.85));}
+  .round-art img:first-child{transform:scaleX(-1);}
+  .round-art span{font:400 clamp(27px,5vw,58px)/1 Impact,'Arial Black',sans-serif;letter-spacing:.06em;color:#fff;text-shadow:3px 3px 0 #090611,6px 6px 0 var(--neon-magenta);white-space:nowrap;}
+  @keyframes roundArtShow{0%{opacity:0;transform:translate(-50%,-50%) scale(.72)}18%{opacity:1;transform:translate(-50%,-50%) scale(1.04)}68%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.12)}}
+
   @keyframes bannerShow{
     0%{opacity:0;transform:scale(0.3);}
     25%{opacity:1;transform:scale(1.1);}
@@ -375,6 +382,11 @@
         <div class="combo-badge p1" id="p1Combo"></div>
         <div class="combo-badge p2" id="p2Combo"></div>
         <div class="round-banner" id="banner"></div>
+        <div class="round-art" id="roundArt" aria-hidden="true">
+          <img src="sprites/player1.png" alt="Player 1" />
+          <span>ROUND 1</span>
+          <img src="sprites/player2.png" alt="Player 2" />
+        </div>
         <div class="black-announce" id="blackAnnounce">DC BLACK!</div>
       </div>
 
@@ -1288,6 +1300,8 @@ function initFight(){
 
 function showBanner(text){
   const el = $('banner'); el.textContent = text;
+  const roundArt = $('roundArt');
+  if(roundArt) roundArt.classList.toggle('show', text === 'ROUND 1');
   el.classList.remove('show'); void el.offsetWidth; el.classList.add('show');
 }
 
