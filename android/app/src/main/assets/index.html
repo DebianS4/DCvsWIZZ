@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="DC vs WiZZ — arena arcade remasterizada. Elige tu luchador y entra al combate." />
+    <title>DC vs WiZZ — Arcade Remastered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="DC vs WiZZ inicio">
+        <span class="brand-mark">DC<span>//</span>WZ</span>
+        <span class="brand-caption">REMIXED ARENA</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#luchadores">Luchadores</a>
+        <a href="#galeria">Galería</a>
+        <a href="#arena">Arena</a>
+      </nav>
+      <a class="header-cta" href="#arena" data-shake>JUGAR <span>↗</span></a>
+    </header>
+
+    <main id="inicio">
+      <section class="hero section-shell">
+        <div class="speed-lines" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> ARCADE FIGHTER · REMASTER 2026</p>
+          <img class="hero-wordmark" src="/assets/DvsW.png" alt="DC vs WiZZ" />
+          <div class="hero-players" aria-label="Player 1 y Player 2">
+            <img src="/game/sprites/p1.png" alt="Player 1" />
+            <span>PLAYER 1 <b>VS</b> PLAYER 2</span>
+            <img src="/game/sprites/p2.png" alt="Player 2" />
+          </div>
+          <p class="hero-lede">¡El choque definitivo de mundos!</p>
+          <p class="hero-body">Dos estilos. Una arena. Entra al laboratorio, elige tu lado y pelea hasta que solo quede una señal en pantalla.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#arena" data-shake><span>¡JUGAR AHORA!</span><b>↗</b></a>
+            <a class="btn btn-ghost" href="#luchadores">VER LUCHADORES <span>↓</span></a>
+            <a class="btn btn-download" href="/downloads/DCvsWIZZ.apk" download><span>DESCARGAR APK</span><b>↓</b></a>
+          </div>
+          <div class="hero-meta"><span><b>10</b> técnicas por rival</span><span><b>60</b> FPS de combate</span><span><b>1</b> jefe final</span></div>
+        </div>
+        <div class="hero-art hero-art-photo" aria-label="DC y WiZZ en combate">
+          <img src="/assets/si.jpg" alt="DC y WiZZ combatiendo junto a una bicicleta" />
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Estado de la arena"><div class="ticker-track"><span>SELECT YOUR FIGHTER</span><i>✦</i><span>NO PAUSE · NO MERCY</span><i>✦</i><span>DC VS WIZZ REMASTERED</span><i>✦</i><span>SELECT YOUR FIGHTER</span><i>✦</i><span>NO PAUSE · NO MERCY</span><i>✦</i></div></section>
+
+      <section class="fighters section-shell" id="luchadores">
+        <div class="section-intro"><div><p class="eyebrow">01 / ROSTER</p><h2>ELIGE TU <span>GUERRERO</span></h2></div><p class="section-note">Dos firmas de combate.<br />Un solo nombre en la pantalla final.</p></div>
+        <div class="versus-panel">
+          <div class="fighter-panel fighter-panel-dc" data-fighter-panel="dc">
+            <div class="panel-top"><span>PLAYER 01</span><b>READY</b></div>
+            <div class="fighter-portrait"><div class="portrait-glow"></div><img src="/game/sprites/p1.png" alt="Player 1" /></div>
+            <div class="fighter-copy"><span class="fighter-tag">BLUE VOLT · ALL-ROUNDER</span><h3>DC</h3><p>Golpe directo, defensa sólida y una transformación que cambia el ritmo en mitad de la ronda.</p></div>
+            <div class="stats"><div><span>ATAQUE</span><b style="--value:88%"><i></i></b><em>88</em></div><div><span>VELOCIDAD</span><b style="--value:74%"><i></i></b><em>74</em></div><div><span>ESPECIAL</span><b style="--value:92%"><i></i></b><em>92</em></div></div>
+          </div>
+          <div class="versus-core"><span class="slash slash-a"></span><strong>VS</strong><span class="slash slash-b"></span><small>CHOOSE<br />YOUR SIDE</small></div>
+          <div class="fighter-panel fighter-panel-wizz" data-fighter-panel="wizz">
+            <div class="panel-top"><span>PLAYER 02</span><b>READY</b></div>
+            <div class="fighter-portrait"><div class="portrait-glow"></div><img src="/game/sprites/p2.png" alt="Player 2" /></div>
+            <div class="fighter-copy"><span class="fighter-tag">RED STATIC · RUSHER</span><h3>WiZZ</h3><p>Movilidad agresiva y ataques encadenados para convertir cada abertura en una explosión.</p></div>
+            <div class="stats"><div><span>ATAQUE</span><b style="--value:79%"><i></i></b><em>79</em></div><div><span>VELOCIDAD</span><b style="--value:94%"><i></i></b><em>94</em></div><div><span>ESPECIAL</span><b style="--value:83%"><i></i></b><em>83</em></div></div>
+          </div>
+        </div>
+        <div class="roster-switch" role="tablist" aria-label="Cambiar protagonista"><button class="roster-chip active" data-fighter="dc">DC <span>BLUE VOLT</span></button><button class="roster-chip" data-fighter="wizz">WiZZ <span>RED STATIC</span></button></div>
+      </section>
+
+      <section class="gallery section-shell" id="galeria">
+        <div class="section-intro"><div><p class="eyebrow">02 / CAPTURAS</p><h2>SEÑALES DE LA <span>ARENA</span></h2></div><div class="gallery-controls"><button class="round-btn" data-gallery="prev" aria-label="Imagen anterior">←</button><button class="round-btn" data-gallery="next" aria-label="Imagen siguiente">→</button></div></div>
+        <div class="gallery-rail" data-gallery-rail>
+          <figure class="gallery-card gallery-card-wide"><img src="/assets/portada.jpg" alt="Portada de DC vs WiZZ" /><figcaption><span>STAGE 01</span><b>LA ARENA DESPIERTA</b></figcaption></figure>
+          <figure class="gallery-card"><img src="/assets/paguinaimagenes.jpg" alt="Arte y capturas del juego" /><figcaption><span>COMBAT LOG</span><b>IMPACT FRAME</b></figcaption></figure>
+          <figure class="gallery-card gallery-card-tall"><img src="/assets/mikelBossF.png" alt="Miguel, jefe final" /><figcaption><span>FINAL BOSS</span><b>MIGUEL WAITING</b></figcaption></figure>
+          <figure class="gallery-card"><img src="/assets/yiyo-demo.png" alt="Captura de demo" /><figcaption><span>LAB NOTES</span><b>TEST BUILD</b></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="arena section-shell" id="arena">
+        <div class="section-intro arena-intro"><div><p class="eyebrow">03 / LIVE CABINET</p><h2>ENTRA A LA <span>ARENA</span></h2></div><p class="section-note">Elige modo, activa el audio<br />y demuestra quién manda.</p></div>
+        <div class="cabinet">
+          <div class="cabinet-header"><span class="cabinet-lamp lamp-blue"></span><b>DC // WIZZ <i>REMIXED</i></b><span class="cabinet-lamp lamp-red"></span></div>
+          <div class="cabinet-screen"><div class="screen-glare"></div><iframe title="DC vs WiZZ juego remasterizado" src="/game/game.html?demo" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+          <div class="cabinet-deck"><span class="deck-line"></span><div class="deck-stick"><i></i></div><div class="deck-buttons"><b></b><b></b><b></b><b></b><b></b><b></b></div><span class="deck-label">PUSH START · FIGHT!</span></div>
+        </div>
+        <div class="controls-row"><div><b>JUGADOR 1</b><span>A/D mover · W saltar · S bloquear</span><span>J/K atacar · L especial · U súper</span></div><div><b>JUGADOR 2</b><span>Flechas mover · 1/2 atacar</span><span>3 especial · 5 súper</span></div><a class="btn btn-primary small" href="/game/game.html?demo" target="_blank" data-shake><span>PANTALLA COMPLETA</span><b>↗</b></a></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-mark">DC <span>×</span> WiZZ</div><p>ORIGINAL 2D ARCADE FIGHTER · REMASTERED WITH VOLT STRIKE ENERGY</p><a href="#inicio">VOLVER ARRIBA ↑</a></footer>
+    <script src="/script.js" defer></script>
+  </body>
+</html>

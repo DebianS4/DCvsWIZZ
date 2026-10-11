@@ -14,3 +14,6 @@
 .hero-art-photo:before,.hero-art-photo:after{display:none;}
 .hero-art-photo>img{display:block;width:100%;height:auto;max-height:550px;object-fit:contain;border:2px solid rgba(19,167,255,.65);clip-path:polygon(3% 0,100% 5%,96% 100%,0 94%);box-shadow:0 0 28px rgba(19,167,255,.28),8px 8px 0 rgba(239,61,255,.42);filter:saturate(1.12) contrast(1.04);}
 @media(max-width:900px){.hero-art-photo{width:min(100%,620px);margin:0 auto;}.hero-art-photo>img{max-height:420px;}}
+
+.btn-download{border-color:var(--yellow);color:var(--yellow);}
+.btn-download:hover{background:var(--yellow);color:var(--ink);box-shadow:0 0 22px rgba(255,233,0,.35);}
