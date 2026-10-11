@@ -1284,6 +1284,7 @@ function initFight(){
   Game.p2 = new Fighter(2, p2char, 900, -1, isP2CPU, true);
   Game.p2.aiDifficulty = diff;
   Game.p2.isMiguelBoss = Game.mode==='arcade' && p2char==='miguel';
+  ["p1HpBar","p2HpBar","timer"].forEach(id=>{const e=document.getElementById(id);if(e)e.style.visibility=Game.p2.isMiguelBoss?"hidden":"visible";});
   Game.bossCinematic = null;
   Game.bossIntro = Game.p2.isMiguelBoss ? { elapsed: 0 } : null;
   Game.p1.opponent = Game.p2;
@@ -1316,14 +1317,9 @@ function updateHUD(){
   const p1HpBar = $('p1HpBar'), p2HpBar = $('p2HpBar');
   p1HpBar.classList.toggle('dc-black', Game.p1.isDCBlack);
   p2HpBar.classList.toggle('dc-black', Game.p2.isDCBlack);
-  // Miguel tiene una presentación cinematográfica: se libera todo el fondo ocultando
-  // las dos barras, las súper barras y el contador central durante toda su pelea.
-  const miguelFight = Boolean(Game.p2.isMiguelBoss);
+  // La batalla de Miguel se presenta como una escena especial, sin barras de vida ni súper.
   document.querySelectorAll('#p1HpBar, #p2HpBar, #screen-fight .super-bar-outer').forEach(el => {
-    el.style.visibility = miguelFight ? 'hidden' : 'visible';
-  });
-  document.querySelectorAll('#screen-fight .hud-top, #screen-fight #timer').forEach(el => {
-    el.style.display = miguelFight ? 'none' : '';
+    el.style.visibility = Game.p2.isMiguelBoss ? 'hidden' : 'visible';
   });
   $('p1Hp').style.width = (Game.p1.hp/Game.p1.maxHp*100)+'%';
   $('p2Hp').style.width = (Game.p2.hp/Game.p2.maxHp*100)+'%';
