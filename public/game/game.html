@@ -1271,6 +1271,8 @@ function initFight(){
     p2char = Game.arcadeOpponents[Game.arcadeStage];
     diff = Game.arcadeDiff[Game.arcadeStage];
     isP2CPU = true;
+    // Si el jugador eligió WIZZ, no lo duplicamos como rival: el elegido permanece a la izquierda.
+    if(p2char === p1char && p1char !== 'miguel') p2char = p1char === 'wizz' ? 'dc' : 'wizz';
   } else if(Game.mode==='practice'){
     isP2CPU = true; diff = 0;
   } else if(Game.mode==='versus'){
@@ -1505,6 +1507,13 @@ function loop(now){
         const push = (minGap - Math.abs(gap)) * 0.5;
         Game.p1.x = clamp(Game.p1.x - dir * push, 80, W-80);
         Game.p2.x = clamp(Game.p2.x + dir * push, 80, W-80);
+      }
+      // Cada jugador conserva su lado: el elegido a la izquierda y la IA a la derecha.
+      // Miguel mantiene su comportamiento especial de jefe y queda fuera de esta restricción.
+      if(!Game.p2.isMiguelBoss){
+        const sideGap = 48;
+        Game.p1.x = Math.min(Game.p1.x, W/2 - sideGap);
+        Game.p2.x = Math.max(Game.p2.x, W/2 + sideGap);
       }
       // La escena de KO espera a que termine la animación especial de 3 segundos.
       const specialCinematic=[Game.p1,Game.p2].some(f=>f.attackWindow?.ultimate && f.stateTimer<f.attackWindow.duration);
