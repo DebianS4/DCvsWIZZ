@@ -3,9 +3,9 @@
 [![Build APK](https://github.com/DebianS4/DCvsWIZZ/actions/workflows/android.yml/badge.svg)](https://github.com/DebianS4/DCvsWIZZ/actions/workflows/android.yml)
 [![Latest APK](https://img.shields.io/github/v/release/DebianS4/DCvsWIZZ?label=APK&logo=android)](https://github.com/DebianS4/DCvsWIZZ/releases/latest)
 [![APK Download](https://img.shields.io/badge/download-APK-34a853?logo=android&logoColor=white)](https://github.com/DebianS4/DCvsWIZZ/releases/download/v1.0.0/DCvsWIZZ.apk)
-[![Website](https://img.shields.io/badge/website-arcade-13a7ff)](https://github.com/DebianS4/DCvsWIZZ)
+[![Website](https://img.shields.io/badge/website-arcade-13a7ff)](https://debians4.github.io/DCvsWIZZ/)
 [![Security](https://img.shields.io/badge/security-SECURITY.md-2ea44f)](SECURITY.md)
-[![License](https://img.shields.io/badge/license-private-lightgrey)](https://github.com/DebianS4/DCvsWIZZ)
+[![License](https://img.shields.io/badge/license-public-lightgrey)](https://github.com/DebianS4/DCvsWIZZ)
 
 ![Portada DC vs WiZZ](public/assets/portada.jpg)
 
@@ -13,7 +13,7 @@
 
 ## Enlaces principales
 
-- **[Visitar la página](https://github.com/DebianS4/DCvsWIZZ)**
+- **[Visitar la página](https://debians4.github.io/DCvsWIZZ/)**
 - **[Descargar la APK](https://github.com/DebianS4/DCvsWIZZ/releases/download/v1.0.0/DCvsWIZZ.apk)**
 - **[Ver la release v1.0.0](https://github.com/DebianS4/DCvsWIZZ/releases/tag/v1.0.0)**
 - **[Ver el repositorio](https://github.com/DebianS4/DCvsWIZZ)**
