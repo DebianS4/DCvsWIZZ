@@ -21,9 +21,13 @@ jobs:
           java-version: '17'
           cache: gradle
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-      - name: Install Android platform
-        run: sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+        shell: bash
+        run: |
+          SDKMANAGER="$(command -v sdkmanager || find "${ANDROID_HOME:-/usr/local/lib/android/sdk}" -name sdkmanager -type f | head -1)"
+          test -n "$SDKMANAGER"
+          echo "$(dirname "$(dirname "$SDKMANAGER")")/platform-tools" >> "$GITHUB_PATH"
+          yes | "$SDKMANAGER" --licenses >/dev/null || true
+          "$SDKMANAGER" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
       - name: Build release APK
         working-directory: android
         run: ./gradlew assembleDebug --no-daemon
