@@ -1132,7 +1132,9 @@ function drawUltimateArt(f){
   const w=art.naturalWidth*scale,h=art.naturalHeight*scale;
   const pulse=1+Math.sin(f.stateTimer*18)*.025;
   ctx.save();
-  const flip=f.char==='wizz'?f.facing===1:f.facing===-1;
+  // El arte de la bicicleta de fuego de WIZZ está dibujado al revés que sus sprites normales.
+  // Invertimos solo su arte definitivo para que siempre mire hacia el oponente.
+  const flip=f.char==='wizz'?f.facing===-1:f.facing===-1;
   if(flip)ctx.scale(-1,1);
   ctx.globalAlpha=.88+.12*Math.sin(f.stateTimer*12);
   ctx.filter=`drop-shadow(0 0 20px ${f.char==='dc'?'#29aaff':'#ff302d'})`;
