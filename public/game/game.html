@@ -1316,9 +1316,14 @@ function updateHUD(){
   const p1HpBar = $('p1HpBar'), p2HpBar = $('p2HpBar');
   p1HpBar.classList.toggle('dc-black', Game.p1.isDCBlack);
   p2HpBar.classList.toggle('dc-black', Game.p2.isDCBlack);
-  // La batalla de Miguel se presenta como una escena especial, sin barras de vida ni súper.
+  // Miguel tiene una presentación cinematográfica: se libera todo el fondo ocultando
+  // las dos barras, las súper barras y el contador central durante toda su pelea.
+  const miguelFight = Boolean(Game.p2.isMiguelBoss);
   document.querySelectorAll('#p1HpBar, #p2HpBar, #screen-fight .super-bar-outer').forEach(el => {
-    el.style.visibility = Game.p2.isMiguelBoss ? 'hidden' : 'visible';
+    el.style.visibility = miguelFight ? 'hidden' : 'visible';
+  });
+  document.querySelectorAll('#screen-fight .hud-top, #screen-fight #timer').forEach(el => {
+    el.style.display = miguelFight ? 'none' : '';
   });
   $('p1Hp').style.width = (Game.p1.hp/Game.p1.maxHp*100)+'%';
   $('p2Hp').style.width = (Game.p2.hp/Game.p2.maxHp*100)+'%';
