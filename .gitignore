@@ -1,3 +1,4 @@
 android/.gradle/
 android/build/
 android/app/build/
+public/downloads/*.apk
