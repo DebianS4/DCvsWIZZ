@@ -9,7 +9,7 @@ Arcade fighter remasterizado **DC vs WiZZ**, con página promocional, juego web 
 
 ## Descargar la APK
 
-- **[Descargar DCvsWIZZ APK desde la página](https://github.com/DebianS4/DCvsWIZZ/releases/download/v1.0.0/DCvsWIZZ.apk)**
+- **[Descargar DCvsWIZZ APK desde la página](https://files.manuscdn.com/user_upload_by_module/session_file/310519664013943763/twRkceqzUigesuvF.apk)**
 - **[Abrir releases de GitHub](https://github.com/DebianS4/DCvsWIZZ/releases)**
 
 La APK se instala en dispositivos Android compatibles. Puede ser necesario habilitar la instalación desde fuentes externas en el dispositivo.
